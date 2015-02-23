@@ -1,51 +1,19 @@
 <?php
- 
-/*
- * Following code will create a new product row
- * All product details are read from HTTP Post Request
- */
- 
-// array for JSON response
-$response = array();
- 
-// check for required fields
-if (isset($_POST['rating']) && isset($_POST['review_text'])) {
- 
-    $rating = $_POST['rating'];
-    $review_text = $_POST['review_text'];
-
- 
-    // include db connect class
-    require_once __DIR__ . '/db_connect.php';
- 
-    // connecting to db
-    $db = new DB_CONNECT();
- 
-    // mysql inserting a new row
-    $result = mysql_query("INSERT INTO review(rating, review_text) VALUES('$rating', '$review_text')");
- 
-    // check if row inserted or not
-    if ($result) {
-        // successfully inserted into database
-        $response["success"] = 1;
-        $response["message"] = "Product successfully created.";
- 
-        // echoing JSON response
-        echo json_encode($response);
-    } else {
-        // failed to insert row
-        $response["success"] = 0;
-        $response["message"] = "Oops! An error occurred.";
- 
-        // echoing JSON response
-        echo json_encode($response);
-    }
-} else {
-    // required field is missing
-    $response["success"] = 0;
-    $response["message"] = "Required field(s) is missing";
- 
-    // echoing JSON response
-    echo json_encode($response);
-}
+	include '/home/a5055916/public_html/tutors/connection.php';
+	
+	$review = $_POST['inputReview'];
+	
+	if(!$_POST['submit'])
+	{
+		echo "please fill out the form";
+		header('Location:/home/a5055916/public_html/tutors/index.php');
+	}
+	else
+	{
+		mysql_query("INSERT INTO review (`id`,`text_review`) VALUES (NULL,'$review')") or die (mysql_error());
+		echo "Review has been added";
+		header('Location: index.php');
+	}
+	
+	
 ?>
