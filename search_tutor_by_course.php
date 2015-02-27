@@ -1,5 +1,5 @@
 <?php
-	include '/home/a5055916/public_html/tutors/connection.php';
+	include '/home/a5055916/public_html/connection.php';
 	$output = '';
 	if(isset($_POST['search']))
 	{

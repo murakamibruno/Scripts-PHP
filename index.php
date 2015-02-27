@@ -1,6 +1,6 @@
 
 <?php
-	include '/home/a5055916/public_html/tutors/connection.php';
+	include '/home/a5055916/public_html/connection.php';
 	
 	session_start();
 	
@@ -31,4 +31,4 @@
 	<input type="submit" value="submit"/> <br/>
 </form>
 
-<a href="registration.php"> Register Now! </a>
+<a href="registration.php"> Register NOW! </a>

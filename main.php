@@ -1,8 +1,8 @@
 <?php
 
-	include '/home/a5055916/public_html/tutors/connection.php';
-	include '/home/a5055916/public_html/tutors/search_tutor_by_course.php';
-	
+	include '/home/a5055916/public_html/connection.php';
+	include '/home/a5055916/public_html/search_tutor_by_course.php';
+
 	
 	/*$query = "SELECT * FROM tutors";
 	
@@ -15,10 +15,9 @@
 		echo "<h3>" . $tutors['first_name'] . "</h3>";
 	}
 	*/
-	
+
 	session_start();
 	print("$output");
-
 	
 ?>
 
@@ -28,6 +27,14 @@
 		Review<input type="text" name="inputReview" value="" />
 		<br />
 		<input type="submit" name="submit" />
+	</form>
+	
+	<h1> Insert College </h1>
+	<form action="create_college.php" method="post">
+		College Name <input type="text" name="inputCname" value=""/>
+		ZipCode <input type="text" name="inputZipcode" value=""/>
+		<br/>
+		<input type="submit" name="submit"/>
 	</form>
 	
 	<h1> Insert the tutor information </h1>
@@ -46,3 +53,8 @@
 		<input type="text" name="search" placeholder="Searching for tutors"/>
 		<input type="submit" value=">>">
 	</form>
+	<br/>
+	
+	<a href="logout = yes"> Logout </a>
+	
+	

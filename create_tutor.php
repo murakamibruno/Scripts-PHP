@@ -1,11 +1,13 @@
 <?php
-	include '/home/a5055916/public_html/tutors/connection.php';
+	include '/home/a5055916/public_html/connection.php';
 	
 	$fname = $_POST['inputFname'];
 	$lname = $_POST['inputLname'];
-	$course = $_POST['inputCourse'];
+	$email = $_POST['inputEmail'];
+	$subject = $_POST['inputSubject'];
+	$bio = $_POST['inputBio'];
 	$loc = $_POST['inputLocation'];
-	$time = $_POST['inputTime'];
+	
 	
 	
 	if(!$_POST['submit'])
@@ -15,7 +17,7 @@
 	}
 	else
 	{
-		mysql_query("INSERT INTO tutors (`id`,`first_name`,`last_name`,`course`,`time`,`location`) VALUES (NULL,'$fname','$lname','$course','$time','$loc')") or die (mysql_error());
+		mysql_query("INSERT INTO tutors (`id`,`first_name`,`last_name`,`time`,`location`) VALUES (NULL,'$fname','$lname',,'$time','$loc')") or die (mysql_error());
 		echo "Review has been added";
 		header('Location: main.php');
 	}
